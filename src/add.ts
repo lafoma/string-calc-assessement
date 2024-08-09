@@ -25,6 +25,11 @@ export const add = (str: string): any => {
   // throw an error if non-number is found
   validateNums(nums);
 
+
+    // check presence of negative numbers
+    const negativeNums = nums.filter((n: number) => n < 0) 
+    if (negativeNums?.length) throw new Error(`negative numbers not allowed ${negativeNums.join(',')}`)
+
   return nums.reduce((acc: number, unit: number) => acc + Number(unit), 0);
 }
 
