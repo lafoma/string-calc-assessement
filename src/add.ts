@@ -1,4 +1,8 @@
 export const add = (str: string): any => {
+    const validateNums = (nums: any[]) => {
+        const invalidFlag = nums.some(n => isNaN(Number(n)));
+        if (invalidFlag) throw new Error('Please check the expression once again.')
+    }
   const parseStr = (str: string): any => { 
     const delimRegxp = /^\/\/(.)\n/;
     const match = str.match(delimRegxp);
@@ -17,6 +21,10 @@ export const add = (str: string): any => {
     str = str.split('\n').map(subStr => subStr.trim()).join(','); 
     nums = str.split(',');
   }
+
+  // throw an error if non-number is found
+  validateNums(nums);
+
   return nums.reduce((acc: number, unit: number) => acc + Number(unit), 0);
 }
 

@@ -15,6 +15,9 @@ describe('String Addition TDD', () => {
     expect(add('//;\n1;2')).toBe(3);
   })
 
+  test('should throw an error for not a number', () => {
+    expect(() => add('//;\n18;not;a;number')).toThrow('Please check the expression once again.');
+  });
 
 });
 
