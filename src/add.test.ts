@@ -22,8 +22,12 @@ describe('String Addition TDD', () => {
     expect(() => add('//;\n18;not;a;number')).toThrow('Please check the expression once again.');
   });
 
-  test('should throw an exception if negative number is found add("1,2,-15")', () => {
+  test('should throw an exception if negative number is found, add("1,2,-15")', () => {
     expect(() => add('1,2,-15')).toThrow('negative numbers not allowed -15');
+  });
+
+  test('should throw an exception if multiple negative number(s) are found, add("1,2,-2, -4, -7")', () => {
+    expect(() => add('1,2,-2, -4, -7')).toThrow('negative numbers not allowed -2, -4, -7');
   });
 
 
