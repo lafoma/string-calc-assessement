@@ -1,5 +1,5 @@
 # string-calc-assessement
-String Calc Assessment 
+
 Details regarding the exercise
 ----
 
