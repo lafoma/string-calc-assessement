@@ -11,7 +11,7 @@ describe('String Addition TDD', () => {
   test('should handle new lines between numbers. for e.g. add("1\n2,3") would output 6', () => {
     expect(add('1\n2,3')).toBe(6);
   })
-  test('should handle different delimiters', () => {
+  test('should support different delimiters', () => {
     expect(add('//;\n1;2')).toBe(3);
   })
 
